@@ -3,65 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prof. Ozgur H. Aydogmus | Department of Economics, ASBU</title>
+    <title>Prof. Ozgur H. Aydogmus | ASBU</title>
     <style>
-        body { font-family: sans-serif; color: #2d3748; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+        body { font-family: system-ui, -apple-system, sans-serif; color: #2d3748; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
         a { color: #3182ce; text-decoration: none; }
-        h2 { color: #2b6cb0; border-bottom: 2px solid #e2e8f0; padding-bottom: 5px; margin-top: 30px; }
+        a:hover { text-decoration: underline; }
+        h2 { color: #1a365d; border-bottom: 2px solid #e2e8f0; padding-bottom: 5px; margin-top: 25px; }
+        
+        /* Tab Navigation Layout */
+        .tab-container { display: flex; justify-content: center; gap: 10px; margin: 30px 0; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+        .tab-btn { background-color: #f7fafc; border: 1px solid #cbd5e0; color: #4a5568; padding: 10px 20px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+        .tab-btn:hover { background-color: #edf2f7; }
+        .tab-btn.active { background-color: #3182ce; color: white; border-color: #3182ce; }
+        
+        /* Content Visibility switches */
+        .tab-content { display: none; animation: fadeIn 0.3s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
-    <header style="text-align: center; margin-bottom: 30px;">
-        <h1 style="margin-bottom: 5px; color: #1a365d;">Ozgur H. Aydogmus</h1>
-        <p style="margin: 0; font-weight: bold;">Professor and Chair, Department of Economics</p>
-        <p style="margin: 0;">Social Sciences University of Ankara (ASBU)</p>
-        <p style="margin: 5px 0 0 0; font-size: 0.95rem;">Ankara, Turkey</p>
-        <p style="margin: 10px 0;">
-            <a href="mailto:ozgur.aydogmus@asbu.edu.tr">ozgur.aydogmus@asbu.edu.tr</a>
+    <!-- ================= HEADER PROFILE ================== -->
+    <header style="text-align: center; margin-bottom: 20px;">
+        <h1 style="margin-bottom: 5px; color: #1a365d; font-size: 2.3rem;">Ozgur H. Aydogmus</h1>
+        <p style="margin: 0; font-weight: bold; font-size: 1.1rem;">Professor and Chair, Department of Economics</p>
+        <p style="margin: 0; color: #4a5568;">Social Sciences University of Ankara (ASBU)</p>
+        <p style="margin: 5px 0; font-size: 0.95rem; color: #718096;">Ankara, Turkey</p>
+        <p style="margin: 10px 0; font-size: 0.95rem;">
+            <a href="mailto:ozgur.aydogmus@asbu.edu.tr">ozgur.aydogmus@asbu.edu.tr</a> | 
+            <a href="https://scholar.google.com/citations?user=IfuNSq4AAAAJ" target="_blank">Google Scholar</a> | 
+            <a href="https://orcid.org/0000-0002-9463-7197" target="_blank">ORCID</a>
         </p>
     </header>
 
-    <hr style="border: 0; border-top: 1px solid #e2e8f0; margin-bottom: 30px;">
+    <!-- ================= INTERACTIVE BUTTONS ================== -->
+    <div class="tab-container">
+        <button class="tab-btn active" onclick="switchTab('about')">About &amp; Overview</button>
+        <button class="tab-btn" onclick="switchTab('projects')">Ongoing Projects</button>
+        <button class="tab-btn" onclick="switchTab('publications')">Publications</button>
+        <button class="tab-btn" onclick="switchTab('teaching')">Teaching</button>
+    </div>
 
-    <section>
+    <!-- ================= TAB 1: ABOUT & OVERVIEW ================== -->
+    <div id="about" class="tab-content active">
         <h2>Education</h2>
         <ul>
-            <li>
-                <strong>Iowa State University</strong>, Ames, IA<br>
-                Ph.D. in Applied Mathematics (2008-2013)<br>
-                <em>Dissertation: Non-local interactions in spatial evolutionary games</em>
-            </li>
-            <li style="margin-top: 10px;">
-                <strong>Ankara University</strong>, Ankara, Turkey<br>
-                M.S. in Mathematics (2005-2007)<br>
-                B.S. in Mathematics (1999-2004)
-            </li>
+            <li><strong>Iowa State University</strong>, Ames, IA<br>Ph.D. in Applied Mathematics (2008-2013)<br><em>Dissertation: Non-local interactions in spatial evolutionary games</em></li>
+            <li><strong>Ankara University</strong>, Ankara, Turkey<br>M.S. in Mathematics (2005-2007) | B.S. in Mathematics (1999-2004)</li>
         </ul>
-    </section>
-
-    <section>
         <h2>Fields of Interest</h2>
         <p>Evolutionary game theory; Stochastic processes and deterministic limits; Mathematical models in biology and social sciences; Pattern formation in ecological models.</p>
-    </section>
-
-    <section>
-        <h2>Appointments</h2>
+        <h2>Academic Appointments</h2>
         <ul>
-            <li><strong>Professor</strong> (2024-Present) - Department of Economics, Social Sciences University of Ankara</li>
-            <li><strong>Visiting Scholar</strong> (2021-2022) - College of Integrated Sciences and Arts, Arizona State University, Mesa, AZ</li>
+            <li><strong>Professor &amp; Chair</strong> (2024-Present) - Department of Economics, ASBU</li>
+            <li><strong>Visiting Scholar</strong> (2021-2022) - Arizona State University, Mesa, AZ</li>
             <li><strong>Associate Professor</strong> (2019-2024) - Department of Economics, ASBU</li>
             <li><strong>Assistant Professor</strong> (2014-2019) - Department of Economics, ASBU</li>
         </ul>
-    </section>
+    </div>
 
-    <section style="margin-top: 40px; text-align: center; background-color: #f7fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
-        <h3 style="margin-top: 0;">Complete CV Document</h3>
-        <p>Download a comprehensive PDF copy of my complete academic curriculum vitae.</p>
-        <a href="papers/cv_ozgur_aydogmus.pdf" download style="display: inline-block; background-color: #3182ce; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-            Download Full CV (PDF)
+    <!-- ================= TAB 2: ONGOING PROJECTS ================== -->
+    <div id="projects" class="tab-content">
+        <h2>Preprints &amp; Working Papers</h2>
+        <ul>
+            <li>Aydogmus, O. H., &amp; Gurpinar, E. <strong>Investment in Knowledge Assets: The Role of Complementarity, Tacitness, and Cooperation</strong>. SSRN Preprint.</li>
+            <li>Aydogmus, O. H., &amp; Gurpinar, E. <strong>Slow and fast time scales in knowledge economics</strong>. (In preparation).</li>
+            <li>Dagtoros, K., Aydogmus, O. H., &amp; Kang, Y. <strong>Turing patterns arising from two species metapopulation models</strong>. (Submitted).</li>
+            <li>Tunc, H., &amp; Aydogmus, O. H. <strong>A Unified Instance Selection Approach Based on Distributional Similarity for Machine Learning</strong>. (Submitted).</li>
+        </ul>
+        <h2>Student Supervision</h2>
+        <ul>
+            <li><strong>Ph.D. Co-supervisor (2021-2025):</strong> Huseyin Caliskan (Forestry Engineering, Cankiri Karatekin University)<br><em>Thesis: Analysis of wood raw material production-consumption relations and sustainability of forests in Turkey with game theory approach: Nash Equilibrium Application</em></li>
+        </ul>
+    </div>
+
+    <!-- ================= TAB 3: PUBLICATIONS ================== -->
+    <div id="publications" class="tab-content">
+        <h2>Refereed Journal Publications</h2>
+        <ol reversed>
+            <li>Aydogmus, O. H., &amp; Kang, Y. (2024). <strong>Deterministic Approximation of a Stochastic Imitation Dynamics with Memory</strong>. <em>Dynamic Games and Applications</em>.</li>
+            <li>Gurpinar, E., &amp; Aydogmus, O. H. (2023). <strong>The production and dissemination of knowledge and positive externalities: a game theoretic approach</strong>. <em>Vizyoner Dergisi</em>.</li>
+            <li>Aydogmus, O. H. (2022). <strong>Increasing returns and path dependence in knowledge creation and their effects on the dynamics of patent pools</strong>. <em>Structural Change and Economic Dynamics</em>.</li>
+            <li>Gurpinar, E., &amp; Aydogmus, O. H. (2022). <strong>The Limits of Knowledge as a Public Good: A Strategic Approach to Tacit Knowledge</strong>. <em>Journal of Yasar University</em>.</li>
+            <li>Ergunes, E. B., Aydogmus, O. H., &amp; Onder, H. (2022). <strong>A game theoretic approach to build mating programs for livestock</strong>. <em>Turkish Journal of Veterinary and Animal Sciences</em>.</li>
+            <li>Gurpinar, E., &amp; Aydogmus, O. H. (2022). <strong>Science, Technology and Institutional Change in Knowledge Production: An Evolutionary Game Theoretic Framework</strong>. <em>Dynamic Games and Applications</em>.</li>
+            <li>Aydogmus, O. H., &amp; Kang, Y. (2022). <strong>Analysis of stationary patterns arising from a time-discrete metapopulation model with nonlocal competition</strong>. <em>Discrete and Continuous Dynamical Systems-B</em>.</li>
+            <li>Tor, A. H., &amp; Aydogmus, O. H. (2022). <strong>A modified multiple shooting algorithm for parameter estimation in ODEs using adjoint sensitivity analysis</strong>. <em>Applied Mathematics and Computation</em>.</li>
+            <li>Cagatay, H., Gurpinar, E., &amp; Aydogmus, O. H. (2020). <strong>Does social learning promote cooperation in social dilemmas?</strong> <em>Journal of Economic Interaction and Coordination</em>.</li>
+            <li>Aydogmus, O. H. (2018). <strong>Discovering the effect of nonlocal payoff calculation on the stability of ESS: Spatial patterns of Hawk-Dove game in metapopulations</strong>. <em>Journal of Theoretical Biology</em>.</li>
+            <li>Aydogmus, O. H. (2018). <strong>Phase transitions in a logistic metapopulation model with nonlocal competition</strong>. <em>Bulletin of Mathematical Biology</em>.</li>
+            <li>Chumley, T., Matzavinos, A., Roitershtein, A., &amp; Aydogmus, O. H. (2018). <strong>Moran-type Bounds for the Fixation Probability in a Frequency-Dependent Wright-Fisher Model</strong>. <em>Journal of Mathematical Biology</em>.</li>
+            <li>Zhou, W., Kang, Y., &amp; Aydogmus, O. H. (2017). <strong>On the Preservation of Cooperation in Two-Strategy Games with Nonlocal Interactions</strong>. <em>Mathematical Biosciences</em>.</li>
+        </ol>
+
+        <h2>Books &amp; Book Chapters</h2>
+        <ul>
+            <li>Kirmizikusak, H. N., &amp; Aydogmus, O. H. (2025). <strong>A Game-Theoretical Analysis of Source Allocation in the Early Modern Ottoman Empire...</strong> In B. Altay (Ed.), <em>Revenue-Raising Institutions, State Organization and Economic Change</em>, Palgrave Macmillan.</li>
+            <li>Aydogmus, O. H. (2021). <strong>Limits of Mathematical Models in Social Sciences</strong>. In E. Gurpinar (Ed.), <em>Which Human? Rationality, Social Preferences and Game Theory</em>, Efil.</li>
+        </ul>
+    </div>
+
+    <!-- ================= TAB 4: TEACHING ================== -->
+    <div id="teaching" class="tab-content">
+        <h2>Social Sciences University of Ankara (ASBU)</h2>
+        <ul>
+            <li>Mathematics for Economists I &amp; II (Undergraduate / Graduate)</li>
+            <li>Game Theory &amp; Topics in Game Theory (Undergraduate / Graduate)</li>
+            <li>Data Analytics and Machine Learning</li>
+            <li>Business Calculus I &amp; II</li>
+        </ul>
+        <h2>Iowa State University (Teaching Assistant)</h2>
+        <ul>
+            <li>Elementary Differential Equations and Laplace Transforms</li>
+            <li>Calculus I &amp; II</li>
+            <li>Discrete Mathematics for Business and Social Sciences</li>
+            <li>College Algebra</li>
+        </ul>
+        <p style="font-size: 0.9rem; font-style: italic; color: #718096; margin-top: 15px;">*Note: All courses listed were instructed in English.</p>
+    </div>
+
+    <!-- ================= DOWNLOAD FOOTER ================== -->
+    <footer style="margin-top: 50px; text-align: center; background-color: #f7fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <p style="margin: 0 0 10px 0; font-weight: bold;">Need the comprehensive print version?</p>
+        <a href="papers/cv_ozgur_aydogmus.pdf" download style="display: inline-block; background-color: #3182ce; color: white; padding: 8px 18px; border-radius: 5px; font-weight: bold; font-size: 0.95rem;">
+            Download Full CV Document (PDF)
         </a>
-    </section>
+    </footer>
+
+    <!-- ================= INTERACTIVE TAB LOGIC ================== -->
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab content panes
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Deactivate all tab buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show the target tab panel and style clicked button
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
