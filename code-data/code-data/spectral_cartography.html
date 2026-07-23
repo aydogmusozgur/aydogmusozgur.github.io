@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code & Data | Spectral Cartography</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a2744;
+            --navy-mid: #2c3e6b;
+            --accent: #c0392b;
+            --bg: #f8f7f4;
+            --bg-card: #ffffff;
+            --border: #ddd8cf;
+            --text: #2a2a2a;
+            --text-mid: #4a4a4a;
+            --text-soft: #777;
+            --badge-code: #1d4e2e;
+            --badge-code-bg: #d4edda;
+            --badge-data: #1a3a5c;
+            --badge-data-bg: #d1e4f5;
+            --badge-pdf: #5a1a0a;
+            --badge-pdf-bg: #f5ddd9;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+        header {
+            background: var(--navy);
+            color: #fff;
+            padding: 36px 24px 28px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #a8c4f0;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 18px;
+        }
+        .back-link:hover { color: #fff; }
+        header h1 {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.3;
+            max-width: 700px;
+        }
+        .meta { margin-top: 8px; font-size: 0.88rem; color: #8a9ab8; }
+
+        .content { max-width: 760px; margin: 40px auto; padding: 0 24px 60px; }
+
+        h2 {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--navy);
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+            margin: 32px 0 14px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px 22px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .icon-code { background: var(--badge-code-bg); color: var(--badge-code); }
+        .icon-data { background: var(--badge-data-bg); color: var(--badge-data); }
+        .icon-pdf  { background: var(--badge-pdf-bg);  color: var(--badge-pdf);  }
+        .card-icon svg { width: 20px; height: 20px; }
+
+        .card-body { flex: 1; }
+        .card-title { font-weight: 600; font-size: 0.95rem; color: var(--navy); margin-bottom: 3px; }
+        .card-desc  { font-size: 0.85rem; color: var(--text-soft); margin-bottom: 10px; }
+
+        .dl-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: opacity 0.15s;
+            border: 1px solid;
+        }
+        .dl-btn:hover { opacity: 0.8; }
+        .dl-btn svg { width: 13px; height: 13px; }
+        .btn-code { background: var(--badge-code-bg); color: var(--badge-code); border-color: #a8d5b5; }
+        .btn-data { background: var(--badge-data-bg); color: var(--badge-data); border-color: #90bce0; }
+        .btn-pdf  { background: var(--badge-pdf-bg);  color: var(--badge-pdf);  border-color: #e5b8b0; }
+
+        .abstract-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--navy-mid);
+            border-radius: 6px;
+            padding: 16px 20px;
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            line-height: 1.75;
+        }
+
+        .cite-box {
+            background: #f0f4f8;
+            border: 1px solid #c8d8e8;
+            border-radius: 6px;
+            padding: 14px 18px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: #2a3a4a;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a class="back-link" href="../index.html">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/></svg>
+        Back to profile
+    </a>
+    <h1>From Local Payoffs to Global Instabilities: A Spectral Cartography of Spatiotemporal Chaos in Canonical 2×2 Evolutionary Games</h1>
+    <div class="meta">Ozgur H. Aydogmus &nbsp;·&nbsp; Under Review</div>
+</header>
+
+<div class="content">
+
+    <h2>Abstract</h2>
+    <div class="abstract-box">
+        <!-- Replace with your actual abstract -->
+        We investigate the emergence of spatiotemporal chaos in canonical 2×2 evolutionary games defined on spatial domains, characterizing the transition from stable equilibria to complex dynamics via spectral methods. By mapping the parameter space of payoff matrices, we construct a spectral cartography that identifies regions of stability, pattern formation, and chaos. Our analysis reveals how local payoff structure drives global dynamical instabilities through nonlocal interactions.
+    </div>
+
+    <h2>Code</h2>
+
+    <div class="card">
+        <div class="card-icon icon-code">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </div>
+        <div class="card-body">
+            <div class="card-title">spectral_cartography.py</div>
+            <div class="card-desc">Main simulation code. Requires NumPy, SciPy, Matplotlib. Python 3.8+.</div>
+            <a class="dl-btn btn-code" href="spectral_cartography.py" download>
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+                Download .py
+            </a>
+        </div>
+    </div>
+
+    <h2>Data</h2>
+
+    <div class="card">
+        <div class="card-icon icon-data">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 0v12h8V2H4zm1 2h6v1H5V4zm0 2h6v1H5V6zm0 2h4v1H5V8z"/></svg>
+        </div>
+        <div class="card-body">
+            <div class="card-title">spectral_cartography_data.zip</div>
+            <div class="card-desc">Simulation output data, parameter sweep results, and figure source data.</div>
+            <a class="dl-btn btn-data" href="spectral_cartography_data.zip" download>
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+                Download .zip
+            </a>
+        </div>
+    </div>
+
+    <h2>Paper</h2>
+
+    <div class="card">
+        <div class="card-icon icon-pdf">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg>
+        </div>
+        <div class="card-body">
+            <div class="card-title">Preprint PDF</div>
+            <div class="card-desc">Under review. Please cite the preprint version until the journal version is available.</div>
+            <a class="dl-btn btn-pdf" href="../papers/spectral_cartography.pdf" target="_blank">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg>
+                View PDF
+            </a>
+        </div>
+    </div>
+
+    <h2>Citation</h2>
+    <div class="cite-box">Aydogmus, O. H. (2025). From Local Payoffs to Global Instabilities: A Spectral Cartography of Spatiotemporal Chaos in Canonical 2×2 Evolutionary Games. <em>Manuscript under review.</em></div>
+
+</div>
+</body>
+</html>
