@@ -28,207 +28,62 @@
             --badge-preprint: #4a3500;
             --badge-preprint-bg: #fff3cd;
         }
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-        }
-
-        header {
-            background: var(--navy);
-            color: #fff;
-            padding: 50px 20px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        header::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background: repeating-linear-gradient(
-                -45deg, transparent, transparent 40px,
-                rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 41px
-            );
-        }
-        header h1 {
-            font-family: 'EB Garamond', serif;
-            font-size: 2.7rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            position: relative;
-            z-index: 1;
-        }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        header { background: var(--navy); color: #fff; padding: 50px 20px 40px; text-align: center; position: relative; overflow: hidden; }
+        header::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 41px); }
+        header h1 { font-family: 'EB Garamond', serif; font-size: 2.7rem; font-weight: 600; letter-spacing: 0.02em; position: relative; z-index: 1; }
         .header-title { font-size: 1.05rem; font-weight: 500; color: #c5cedf; margin-top: 6px; position: relative; z-index: 1; }
         .header-inst  { font-size: 0.95rem; color: #8a9ab8; margin-top: 2px; position: relative; z-index: 1; }
         .header-links { margin-top: 16px; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; position: relative; z-index: 2; }
-        .header-links a {
-            color: #a8c4f0;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            font-size: 0.88rem;
-            padding: 4px 6px;
-            transition: color 0.2s;
-        }
+        .header-links a { color: #a8c4f0; text-decoration: underline; text-underline-offset: 3px; font-size: 0.88rem; padding: 4px 6px; transition: color 0.2s; }
         .header-links a:hover { color: #fff; }
-
-        .tab-container {
-            display: flex;
-            justify-content: center;
-            background: var(--navy-mid);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 3px solid var(--accent);
-        }
-        .tab-btn {
-            background: transparent;
-            border: none;
-            color: #a8b8d8;
-            padding: 14px 28px;
-            font-size: 0.9rem;
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 500;
-            cursor: pointer;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            transition: all 0.2s;
-            border-bottom: 3px solid transparent;
-            margin-bottom: -3px;
-        }
+        .tab-container { display: flex; justify-content: center; background: var(--navy-mid); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--accent); }
+        .tab-btn { background: transparent; border: none; color: #a8b8d8; padding: 14px 28px; font-size: 0.9rem; font-family: 'DM Sans', sans-serif; font-weight: 500; cursor: pointer; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.2s; border-bottom: 3px solid transparent; margin-bottom: -3px; }
         .tab-btn:hover  { color: #fff; background: rgba(255,255,255,0.06); }
         .tab-btn.active { color: #fff; border-bottom-color: var(--accent); background: rgba(255,255,255,0.08); }
-
         .content-area { max-width: 860px; margin: 0 auto; padding: 40px 24px 60px; }
-
         .tab-content { display: none; animation: fadeIn 0.25s ease; }
         .tab-content.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-
-        h2 {
-            font-family: 'EB Garamond', serif;
-            font-size: 1.5rem;
-            color: var(--navy);
-            border-left: 4px solid var(--accent);
-            padding-left: 12px;
-            margin: 36px 0 18px;
-        }
-
+        h2 { font-family: 'EB Garamond', serif; font-size: 1.5rem; color: var(--navy); border-left: 4px solid var(--accent); padding-left: 12px; margin: 36px 0 18px; }
         ul, ol { padding-left: 0; list-style: none; }
         li { margin-bottom: 0; }
-
-        .paper-entry {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 16px 18px;
-            margin-bottom: 10px;
-            position: relative;
-            transition: box-shadow 0.2s;
-        }
+        .paper-entry { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; margin-bottom: 10px; position: relative; transition: box-shadow 0.2s; }
         .paper-entry:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
-
-        .paper-number {
-            position: absolute;
-            right: 16px;
-            top: 16px;
-            font-size: 0.8rem;
-            color: var(--text-soft);
-            font-weight: 300;
-        }
-        .paper-title {
-            font-weight: 600;
-            font-size: 0.97rem;
-            color: var(--navy);
-            margin-bottom: 4px;
-            padding-right: 30px;
-        }
+        .paper-number { position: absolute; right: 16px; top: 16px; font-size: 0.8rem; color: var(--text-soft); font-weight: 300; }
+        .paper-title { font-weight: 600; font-size: 0.97rem; color: var(--navy); margin-bottom: 4px; padding-right: 30px; }
         .paper-authors { font-size: 0.88rem; color: var(--text-mid); margin-bottom: 3px; }
         .paper-venue   { font-size: 0.88rem; color: var(--text-soft); font-style: italic; }
-
         .badge-row { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 9px; }
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            padding: 3px 10px;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: opacity 0.15s;
-        }
+        .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; padding: 3px 10px; border-radius: 4px; text-decoration: none; transition: opacity 0.15s; }
         .badge:hover { opacity: 0.8; }
         .badge svg { width: 12px; height: 12px; flex-shrink: 0; }
-
         .badge-pdf      { background: var(--badge-pdf-bg);      color: var(--badge-pdf);      border: 1px solid #e5b8b0; }
         .badge-code     { background: var(--badge-code-bg);     color: var(--badge-code);     border: 1px solid #a8d5b5; }
         .badge-data     { background: var(--badge-data-bg);     color: var(--badge-data);     border: 1px solid #90bce0; }
         .badge-preprint { background: var(--badge-preprint-bg); color: var(--badge-preprint); border: 1px solid #ffc966; }
         .badge-ssrn     { background: #ede8f5; color: #3a1a6e; border: 1px solid #c4aee8; }
+        .badge-arxiv    { background: #fef3e2; color: #7a3f00; border: 1px solid #f5c97a; }
         .badge-status   { background: #f0f0f0; color: #555; border: 1px solid #ccc; font-weight: 400; }
-
-        .info-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 18px 20px;
-            margin-bottom: 12px;
-        }
+        .badge-accepted { background: #d4edda; color: #1d4e2e; border: 1px solid #a8d5b5; }
+        .info-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 18px 20px; margin-bottom: 12px; }
         .info-card p, .info-card li { font-size: 0.95rem; color: var(--text-mid); }
         .info-card ul { list-style: disc; padding-left: 20px; }
         .info-card li { margin-bottom: 6px; }
         .info-card strong { color: var(--text); }
         .fields-text { font-size: 0.95rem; color: var(--text-mid); }
-
         .teach-section { margin-bottom: 24px; }
         .teach-list { display: flex; flex-direction: column; gap: 4px; }
-        .teach-item {
-            font-size: 0.9rem;
-            color: var(--text-mid);
-            padding: 6px 12px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 28px 20px;
-            background: var(--navy);
-            color: #8a9ab8;
-            font-size: 0.88rem;
-        }
-        footer a {
-            display: inline-block;
-            margin-top: 10px;
-            background: var(--accent);
-            color: #fff;
-            padding: 8px 22px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: opacity 0.2s;
-        }
+        .teach-item { font-size: 0.9rem; color: var(--text-mid); padding: 6px 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px; }
+        footer { text-align: center; padding: 28px 20px; background: var(--navy); color: #8a9ab8; font-size: 0.88rem; }
+        footer a { display: inline-block; margin-top: 10px; background: var(--accent); color: #fff; padding: 8px 22px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: opacity 0.2s; }
         footer a:hover { opacity: 0.85; }
-
-        @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
-            .tab-btn  { padding: 12px 14px; font-size: 0.78rem; letter-spacing: 0.02em; }
-            .content-area { padding: 28px 14px 50px; }
-        }
+        @media (max-width: 600px) { header h1 { font-size: 2rem; } .tab-btn { padding: 12px 14px; font-size: 0.78rem; letter-spacing: 0.02em; } .content-area { padding: 28px 14px 50px; } }
     </style>
 </head>
 <body>
 
-<!-- ================= HEADER ================== -->
 <header>
     <h1>Ozgur H. Aydogmus</h1>
     <p class="header-title">Professor &amp; Chair, Department of Economics</p>
@@ -240,7 +95,6 @@
     </div>
 </header>
 
-<!-- ================= TABS ================== -->
 <div class="tab-container">
     <button class="tab-btn active" onclick="switchTab('about',this)">About</button>
     <button class="tab-btn" onclick="switchTab('projects',this)">Projects</button>
@@ -252,7 +106,6 @@
 
 <!-- ================= TAB 1: ABOUT ================== -->
 <div id="about" class="tab-content active">
-
     <h2>Education</h2>
     <div class="info-card">
         <ul>
@@ -262,12 +115,10 @@
                 M.S. Mathematics (2005–2007) &nbsp;|&nbsp; B.S. Mathematics (1999–2004)</li>
         </ul>
     </div>
-
     <h2>Fields of Interest</h2>
     <div class="info-card">
         <p class="fields-text">Evolutionary game theory &nbsp;·&nbsp; Stochastic processes and their deterministic limits &nbsp;·&nbsp; Mathematical models in biology and social sciences &nbsp;·&nbsp; Pattern formation in ecological models &nbsp;·&nbsp; Machine learning (instance selection, data reduction, clustering)</p>
     </div>
-
     <h2>Academic Appointments</h2>
     <div class="info-card">
         <ul>
@@ -282,59 +133,38 @@
 
 <!-- ================= TAB 2: PROJECTS ================== -->
 <div id="projects" class="tab-content">
+    
+
     <h2>Preprints &amp; Working Papers</h2>
 
-    <div class="paper-entry">
-        <div class="paper-title">From Local Payoffs to Global Instabilities: A Spectral Cartography of Spatiotemporal Chaos in Canonical 2×2 Evolutionary Games</div>
-        <div class="paper-authors">Ozgur H. Aydogmus</div>
-        <div class="badge-row">
-            <span class="badge badge-status">Under Review</span>
-            <a class="badge badge-pdf" href="papers/spectral_cartography.pdf" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg>
-                PDF
-            </a>
-            <a class="badge badge-code" href="code-data/spectral_cartography.html" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-                Code
-            </a>
-            <a class="badge badge-data" href="code-data/spectral_cartography.html" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 0v12h8V2H4zm1 2h6v1H5V4zm0 2h6v1H5V6zm0 2h4v1H5V8z"/></svg>
-                Data
-            </a>
-        </div>
-    </div>
 
     <div class="paper-entry">
-        <div class="paper-title">A Unified Instance Selection Approach Based on Distributional Similarity for Machine Learning</div>
+        <div class="paper-title">Censored Demand Learning on a Platform Recommendation Graph</div>
         <div class="paper-authors">with Huseyin Tunc</div>
+        <div class="paper-venue">How algorithmic recommendation distorts newsvendor inventory decisions and harms welfare</div>
         <div class="badge-row">
-            <span class="badge badge-status">Under Review</span>
-            <a class="badge badge-pdf" href="papers/instance_selection.pdf" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg>
-                PDF
-            </a>
-            <a class="badge badge-code" href="code-data/instance_selection.html" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-                Code
-            </a>
-            <a class="badge badge-data" href="code-data/instance_selection.html" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 0v12h8V2H4zm1 2h6v1H5V4zm0 2h6v1H5V6zm0 2h4v1H5V8z"/></svg>
-                Data
-            </a>
+            <span class="badge badge-status">In Preparation</span>
         </div>
     </div>
 
     <div class="paper-entry">
-        <div class="paper-title">Evolutionary Dynamics of Knowledge Production: The Interplay of Tacitness, Social Preferences and Intellectual Property Rights</div>
-        <div class="paper-authors">with Erkan Gurpinar</div>
+        <div class="paper-title">The Malikâne Paradox: The State, Farmers and the Co-evolutionary Dynamics of Ottoman Tax-Farming, 1535–1799</div>
+        <div class="paper-authors">Ozgur H. Aydogmus</div>
+        <div class="paper-venue">Why a reform that lengthened contract horizons paradoxically raised early-termination rates — a partial-reform trap in an evolutionary game</div>
         <div class="badge-row">
-            <span class="badge badge-status">Under Review</span>
-            <a class="badge badge-ssrn" href="https://ssrn.com/abstract=4294899" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg>
-                SSRN
-            </a>
+            <span class="badge badge-status">In Preparation</span>
         </div>
     </div>
+
+    <div class="paper-entry">
+        <div class="paper-title">The Dimension Gap: Classifying Elementary Cellular Automata by Quenched versus Annealed Lyapunov Spectra</div>
+        <div class="paper-authors">Ozgur H. Aydogmus</div>
+        <div class="paper-venue">A computable quantity — the gap between trajectory-specific and mean-field Kaplan–Yorke dimensions — that separates dynamically distinct automata Wolfram's qualitative classes conflate</div>
+        <div class="badge-row">
+            <span class="badge badge-status">In Preparation</span>
+        </div>
+    </div>
+
 
     <div class="paper-entry">
         <div class="paper-title">Slow and Fast Time Scales in Knowledge Economics</div>
@@ -356,7 +186,6 @@
 
     <h2>Preprints &amp; Under Review</h2>
 
-
     <div class="paper-entry">
         <div class="paper-title">A Unified Instance Selection Approach Based on Distributional Similarity for Machine Learning</div>
         <div class="paper-authors">with Huseyin Tunc</div>
@@ -364,16 +193,10 @@
             <span class="badge badge-preprint">Preprint</span>
             <span class="badge badge-status">Under Review</span>
             <a class="badge badge-pdf" href="papers/instance_selection.pdf" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg>
-                PDF
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg>PDF
             </a>
             <a class="badge badge-code" href="code-data/instance_selection.html" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-                Code
-            </a>
-            <a class="badge badge-data" href="code-data/instance_selection.html" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 0v12h8V2H4zm1 2h6v1H5V4zm0 2h6v1H5V6zm0 2h4v1H5V8z"/></svg>
-                Data
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Code &amp; Data
             </a>
         </div>
     </div>
@@ -385,48 +208,32 @@
             <span class="badge badge-preprint">Preprint</span>
             <span class="badge badge-status">Under Review</span>
             <a class="badge badge-ssrn" href="https://ssrn.com/abstract=4294899" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg>
-                SSRN
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg>SSRN
             </a>
         </div>
     </div>
 
     <h2>Refereed Journal Publications</h2>
 
-    <!-- SVG snippets reused below via a shared definition -->
     <div class="paper-entry">
+        <div class="paper-number">[22]</div>
         <div class="paper-title">From Local Payoffs to Global Instabilities: A Spectral Cartography of Spatiotemporal Chaos in Canonical 2×2 Evolutionary Games</div>
         <div class="paper-authors">Ozgur H. Aydogmus</div>
         <div class="paper-venue">Physical Review E, 2025</div>
         <div class="badge-row">
-        <span class="badge badge-status">Accepted</span>
-        <a class="badge badge-pdf" href="papers/spectral_cartography.pdf" target="_blank">
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg>
-            PDF
-        </a>
-        <a class="badge badge-ssrn" href="https://arxiv.org/abs/2607.24638" target="_blank">
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1
-
-        <div class="paper-entry">
-        <div class="paper-title">From Local Payoffs to Global Instabilities: A Spectral Cartography of Spatiotemporal Chaos in Canonical 2×2 Evolutionary Games</div>
-        <div class="paper-authors">Ozgur H. Aydogmus</div>
-        <div class="badge-row">
-            <span class="badge badge-preprint">Preprint</span>
-            <span class="badge badge-status">Under Review</span>
+            <span class="badge badge-accepted">Accepted</span>
             <a class="badge badge-pdf" href="papers/spectral_cartography.pdf" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg>
-                PDF
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/></svg>PDF
+            </a>
+            <a class="badge badge-arxiv" href="https://arxiv.org/abs/2607.24638" target="_blank">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg>arXiv
             </a>
             <a class="badge badge-code" href="code-data/spectral_cartography.html" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-                Code
-            </a>
-            <a class="badge badge-data" href="code-data/spectral_cartography.html" target="_blank">
-                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 0v12h8V2H4zm1 2h6v1H5V4zm0 2h6v1H5V6zm0 2h4v1H5V8z"/></svg>
-                Data
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Code &amp; Data
             </a>
         </div>
     </div>
+
     <div class="paper-entry">
         <div class="paper-number">[21]</div>
         <div class="paper-title">Deterministic Approximation of a Stochastic Imitation Dynamics with Memory</div>
@@ -716,7 +523,6 @@
             <div class="teach-item">Business Calculus I &amp; II</div>
         </div>
     </div>
-
     <h2>Iowa State University <span style="font-size:0.85rem; font-weight:400; color:var(--text-soft);">(Teaching Assistant)</span></h2>
     <div class="teach-section">
         <div class="teach-list">
@@ -729,9 +535,8 @@
     <p style="font-size:0.85rem;color:var(--text-soft);margin-top:18px;font-style:italic;">All courses instructed in English.</p>
 </div>
 
-</div><!-- end .content-area -->
+</div>
 
-<!-- ================= FOOTER ================== -->
 <footer>
     <p>Download the comprehensive print version</p>
     <a href="papers/cv_ozgur_aydogmus.pdf" download>Download Full CV (PDF)</a>
@@ -745,6 +550,5 @@
         btn.classList.add('active');
     }
 </script>
-
 </body>
 </html>
